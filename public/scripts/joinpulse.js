@@ -1,15 +1,15 @@
-var tl = gsap.timeline({ defaults: { duration: 2, ease: 'none' } });
+// var tl = gsap.timeline({ defaults: { duration: 2, ease: 'none' } });
 
-tl.to('#text1', {
-  duration: 4,
-  scrambleText: {
-    text: 'PULSE',
-    chars: 'XO',
-    revealDelay: 1,
-    tweenLength: false,
-    speed: 0.4,
-  },
-});
+// tl.to('#text1', {
+//   duration: 4,
+//   scrambleText: {
+//     text: 'PULSE',
+//     chars: 'XO',
+//     revealDelay: 1,
+//     tweenLength: false,
+//     speed: 0.4,
+//   },
+// });
 const menu_btn = document.querySelector('.menu-btn');
 const nav_menu = document.querySelector('.nav_menu');
 const form = document.querySelector('form');

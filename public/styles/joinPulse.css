@@ -384,12 +384,13 @@ h1 {
   transform: rotate(-90deg);
   left: 0;
   bottom: 30%;
-  font-family: 'Druk Wide Bold', sans-serif;
-  font-size: 8rem;
+  font-family: 'Veneer W01 Two', sans-serif;
+  font-size: 15rem;
   font-weight: 1000;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #fff;
-  opacity: 0.5;
+  /* -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #fff; */
+  color: #fff;
+  opacity: 0.8;
 }
 .input_control {
   margin: 10px 0;
