@@ -25,8 +25,9 @@ const forgotpassword = async details => {
               ><span>${res.error}</span>`;
     alert_msg.classList.add('active');
     setTimeout(() => {
+      window.alert('Please connect your mobile 📶network and try again🔁');
       alert_msg.classList.remove('active');
-      location.assign('/signup');
+      location.assign('/forgotpassword');
     }, 4000);
   }
 };

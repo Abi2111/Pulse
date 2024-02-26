@@ -26,15 +26,15 @@ canvas {
 .hero_section {
   text-align: center;
   position: absolute;
-  width: 50%;
-  height: 50vh;
+  width: 70%;
+  height: 60vh;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 .hero_section img {
   width: 100%;
-  height: 45vh;
+  height: 65vh;
   object-fit: cover;
 }
 .hero_section h1 {
@@ -402,7 +402,7 @@ canvas {
     position: absolute;
     width: 100%;
     height: 50vh;
-    left: 50%;
+    left: 55%;
     top: 50%;
     transform: translate(-50%, -50%);
   }

@@ -86,14 +86,14 @@ exports.signinPost = async (req, res) => {
   }
 };
 exports.forgotpasswordPost = async (req, res) => {
+  const { email } = req.body;
+  const user = await User.findOne({ email });
   try {
-    const { email } = req.body;
     // creating token
     const token = await crypto.randomBytes(32).toString('hex');
     // Hashing the token
     const hashToken = crypto.createHash('sha256').update(token).digest('hex');
 
-    const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({
         status: 'Failed',
@@ -115,7 +115,7 @@ exports.forgotpasswordPost = async (req, res) => {
       user.passwordResetToken = undefined;
       user.passwordResetToken = undefined;
       await user.save({ validateBeforeSave: false });
-      res.status(400).json({
+      return res.status(400).json({
         status: 'Failed',
         error: 'Try again',
       });

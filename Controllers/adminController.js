@@ -1,8 +1,11 @@
 const User = require('./../Models/userModel');
 const Pulse = require('./../Models/joinPulse');
 
-exports.admin = (req, res) => {
-  res.render('admin');
+exports.admin = async (req, res) => {
+  const users = await User.find({ role: 'student' });
+  const faculty = await User.find({ role: 'faculty' });
+  const pulse = await Pulse.find();
+  res.render('admin', { users, faculty, pulse });
 };
 
 exports.adminUsers = async (req, res) => {
@@ -25,6 +28,7 @@ exports.adminUsers = async (req, res) => {
     }
     console.log('Filter', filter);
     const users = await User.find(filter).select('-password');
+    console.log(users.length);
     res.render('adminUsers', { users });
   } catch (error) {
     console.log(error);
