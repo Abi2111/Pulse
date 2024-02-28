@@ -26,7 +26,7 @@ canvas {
 .hero_section {
   text-align: center;
   position: absolute;
-  width: 70%;
+  width: 50%;
   height: 60vh;
   left: 50%;
   top: 50%;
@@ -342,6 +342,14 @@ canvas {
     height: 50px;
     object-fit: cover;
   }
+  .hero_section {
+    width: 90%;
+  }
+  .hero_section img {
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
+  }
   .navbar {
     align-items: center;
   }
@@ -382,6 +390,11 @@ canvas {
   .navbar {
     padding: 5px 20px;
   }
+  .hero_section img {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+  }
   @keyframes animation {
     0% {
       left: 0;
@@ -400,7 +413,7 @@ canvas {
   .hero_section {
     text-align: center;
     position: absolute;
-    width: 100%;
+    width: 90%;
     height: 50vh;
     left: 55%;
     top: 50%;

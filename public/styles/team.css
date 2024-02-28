@@ -408,22 +408,22 @@ body {
   border-radius: 5px;
   position: relative;
   width: 300px;
-  height: 450px;
+  height: 500px;
   object-fit: cover;
   border-radius: 10px;
 }
 .wrapper img {
   border-radius: 5px;
   width: 300px;
-  height: 400px;
+  height: 500px;
   object-fit: cover;
-  aspect-ratio: 1.4;
+  aspect-ratio: 1.7;
   transform: scale(1);
   transition: all 0.5s;
 }
 .wrapper img:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 20px #02e0789d);
+  filter: drop-shadow(0 0 20px #02e07855);
+  transform: scale(1.01);
 }
 .team_member_details {
   position: absolute;
@@ -431,9 +431,9 @@ body {
   height: auto;
   left: 0;
   bottom: 0%;
-  color: #222;
+  color: #fff;
   text-align: center;
-  background: wheat;
+  background: rgba(255, 255, 255, 0.1);
   transition: all 0.5s;
   border-radius: 10px 0 10px 0;
 }
@@ -464,6 +464,9 @@ body {
   opacity: 1;
   visibility: visible;
   transform: translateY(0px);
+}
+.wrapper:hover .team_member_details {
+  filter: drop-shadow(0 0 20px #02e0789d);
 }
 
 @media (max-width: 88em) {
