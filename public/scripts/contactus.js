@@ -23,7 +23,7 @@ const loader_container = document.querySelector('.loader_container');
 window.addEventListener('load', () => {
   setTimeout(() => {
     loader_container.classList.add('active');
-  }, 3000);
+  }, 1000);
 });
 menu_btn.addEventListener('click', () => {
   menu_btn.classList.toggle('open');

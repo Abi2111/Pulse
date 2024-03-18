@@ -411,29 +411,25 @@ body {
   height: 500px;
   object-fit: cover;
   border-radius: 10px;
+  overflow: hidden;
 }
 .wrapper img {
   border-radius: 5px;
   width: 300px;
-  height: 500px;
+  height: 300px;
+  border: 1px solid #2b8a3e;
   object-fit: cover;
   aspect-ratio: 1.7;
   transform: scale(1);
   transition: all 0.5s;
+  border-radius: 300px;
 }
-.wrapper img:hover {
-  filter: drop-shadow(0 0 20px #02e07855);
-  transform: scale(1.01);
-}
+
 .team_member_details {
-  position: absolute;
   width: 100%;
   height: auto;
-  left: 0;
-  bottom: 0%;
   color: #fff;
   text-align: center;
-  background: rgba(255, 255, 255, 0.1);
   transition: all 0.5s;
   border-radius: 10px 0 10px 0;
 }
@@ -442,29 +438,64 @@ body {
   text-transform: uppercase;
 }
 .desigination {
+  position: relative;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
-.team_member_socialmedia {
+.desigination::before {
   position: absolute;
-  top: 0;
-  left: 105%;
+  content: '';
+  width: 10%;
+  height: 2px;
+  background: #2b8a3e;
+  left: 0%;
+  top: 50%;
+}
+.desigination::after {
+  position: absolute;
+  content: '';
+  width: 10%;
+  height: 2px;
+  background: #2b8a3e;
+  right: 0%;
+  top: 50%;
+}
+.team_member_socialmedia {
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
+  justify-content: space-between;
+}
+.team_member_socialmedia .socialmedia {
+  margin: 10px 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #2b8a3e;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
 }
 .team_member_socialmedia .socialmedia a {
   color: #fff;
-  font-size: 2.5rem;
-  display: inline-block;
-  margin-bottom: 10px;
-  transform: translateY(-50px);
-  opacity: 0;
-  visibility: hidden;
+  font-size: 2rem;
   transition: all 0.5s;
+  color: #2b8a3e;
 }
-
-.wrapper:hover .team_member_socialmedia .socialmedia a {
+.team_member_socialmedia .socialmedia:hover {
+  box-shadow: 0 0 20px #02e0789d;
+  background: #2b8a3e;
+}
+.team_member_socialmedia .socialmedia:hover a {
+  color: #fff;
+}
+/* .wrapper:hover .team_member_socialmedia .socialmedia a {
   opacity: 1;
   visibility: visible;
   transform: translateY(0px);
-}
+} */
 .wrapper:hover .team_member_details {
   filter: drop-shadow(0 0 20px #02e0789d);
 }
@@ -500,4 +531,7 @@ body {
     align-items: center;
     justify-content: center;
   }
+}
+.lazy-img {
+  filter: blur(2px);
 }

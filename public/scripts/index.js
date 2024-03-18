@@ -10,5 +10,5 @@ menu_btn.addEventListener('click', () => {
 window.addEventListener('load', () => {
   setTimeout(() => {
     loader_container.classList.add('active');
-  }, 3000);
+  }, 1000);
 });

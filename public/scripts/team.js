@@ -5,7 +5,7 @@ const loader_container = document.querySelector('.loader_container');
 window.addEventListener('load', () => {
   setTimeout(() => {
     loader_container.classList.add('active');
-  }, 3000);
+  }, 1000);
 });
 
 menu_btn.addEventListener('click', () => {
@@ -29,6 +29,27 @@ document.querySelectorAll('.wrapper').forEach(e => {
       { x: 0, opacity: 1, duration: 2.5, ease: 'power4.out', stagger: 4 }
     );
 });
+
+const imgTargets = document.querySelectorAll('img[data-src]');
+console.log(imgTargets);
+
+const loadImg = (entries, observer) => {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.src = entry.target.dataset.src;
+  entry.target.addEventListener('load', () => {
+    entry.target.classList.remove('lazy-img');
+  });
+
+  observer.unobserve(entry.target);
+};
+
+const observer = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0.3,
+});
+
+imgTargets.forEach(img => observer.observe(img));
 
 // Array.from(document.querySelectorAll('.wrapper')).forEach(e => {
 //   const imgs = Array.from(e.querySelectorAll('img'));

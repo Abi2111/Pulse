@@ -9,7 +9,7 @@ menu_btn.addEventListener('click', () => {
 window.addEventListener('load', () => {
   setTimeout(() => {
     loader_container.classList.add('active');
-  }, 4000);
+  }, 1000);
 });
 
 gsap.registerPlugin(ScrollTrigger);

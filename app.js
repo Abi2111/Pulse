@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const limiter = require('express-rate-limit');
+const compression = require('compression');
 const dotenv = require('dotenv');
 const userRouter = require('./Routes/userRoutes');
 const pageRouter = require('./Routes/pageRoutes');
@@ -12,14 +14,27 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const cookiePraser = require('cookie-parser');
 const multer = require('multer');
 const methodOverride = require('method-override');
-
 const User = require('./Models/userModel');
 dotenv.config({ path: './config.env' });
 app.use(express.json());
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-
+app.use(
+  limiter({
+    windowMs: 5000,
+    max: 5,
+    message: {
+      code: 429,
+      message: 'Too many requests',
+    },
+  })
+);
+/*
+level = the level of compression default 9
+threshold = below mention limit it wont compress
+*/
+app.use(compression({ level: 6, threshold: 0 }));
 let store = new MongoDBStore({
   uri: process.env.DB.replace('<password>', process.env.DB_PASSWORD),
   collection: 'mySessions',
