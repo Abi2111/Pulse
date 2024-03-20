@@ -514,3 +514,14 @@ body {
     transform: translate(-50%);
   }
 }
+.copyrights {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.copyrights h2 {
+  text-align: center;
+  color: #02e079;
+  padding: 10px 0;
+  font-weight: 400;
+}

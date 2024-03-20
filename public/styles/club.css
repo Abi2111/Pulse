@@ -589,3 +589,10 @@ body {
     width: 250px;
   }
 }
+
+.copyrights h2 {
+  text-align: center;
+  color: #02e079;
+  padding: 10px 0;
+  font-weight: 400;
+}
