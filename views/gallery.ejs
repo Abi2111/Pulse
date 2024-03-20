@@ -9,6 +9,44 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="loader_container">
+      <div class="svg_container-loader">
+        <svg
+          class="res_cap_svg"
+          width="484"
+          height="53"
+          viewBox="0 0 484 53"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="resistor"
+            d="M0 22.432H21.3213L34.6243 9L57.4035 32L80.1826 9L102.962 32L125.741 9L148.52 32L157.996 22.432H182"
+            stroke="white"
+            stroke-width="1.1"
+          />
+          <path
+            class="inductor"
+            d="M294 22.8416H326C327.833 14.6749 334.2 -1.05844 345 1.34156C358.5 4.34156 359 42.8416 352 50.8416C345 58.8416 341.5 6.34155 367 1.34156C392.5 -3.65842 379.5 47.8416 377 50.8416C374.5 53.8416 367 3.84155 396 1.34156C425 -1.15842 405 60.8416 402 50.8416C399 40.8416 404.5 1.34156 423.5 1.34156C442.5 1.34156 434 62.8416 430 50.8416C426.8 41.2416 434.667 28.1749 439 22.8416H483.5"
+            stroke="white"
+          />
+        </svg>
+        <svg
+          class="capacitor_svg"
+          width="184"
+          height="63"
+          viewBox="0 0 90 32"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path class="capacitor" d="M0 15.5H40V31V0" />
+          <path
+            class="capacitor"
+            d="M89.0841 15.7184L49.0847 15.4998L49.1695 1.36718e-06L49 30.9995"
+          />
+        </svg>
+      </div>
+    </div>
     <!------------------------------------------------------------------------------------------------>
     <div class="navbar">
       <span></span>
@@ -63,6 +101,7 @@
       </div>
     </div>
     <!------------------------------------------------------------------------------------------------>
+
     <div class="description">
       <div class="logo">Gallery</div>
       <p>
@@ -294,7 +333,108 @@
       </div>
     </div>
 
+    <div class="gallery_responsive">
+      <div class="description_responsive">
+        <div class="logo">Gallery</div>
+        <p>
+          Welcome to the vibrant visual journey of our past college fests!
+          Explore the moments that define the spirit of Zrotriya, the annual
+          extravaganza of the Department of Electronics and Communication
+          Engineering [ECE]. Dive into the pulsating energy, creativity, and
+          camaraderie captured through our lenses.
+        </p>
+      </div>
+      <div class="gallery_items">
+        <div class="gallery_item">
+          <img src="/imgs/gallery/1.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/2.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/3.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/4.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/5.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/6.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/7.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/8.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/9.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/10.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/11.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/12.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/13.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/14.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/15.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/16.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/17.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/18.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/19.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/20.jpg" alt="" />
+        </div>
+        <div class="gallery_item">
+          <img src="/imgs/gallery/21.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="/scripts/libs/swiper-bundle.min.js"></script>
     <script src="/scripts/libs/app.js"></script>
+    <script>
+      const menu_btn = document.querySelector('.menu-btn');
+      const nav_menu = document.querySelector('.nav_menu');
+      const loader_container = document.querySelector('.loader_container');
+
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          loader_container.classList.add('active');
+        }, 1000);
+      });
+
+      menu_btn.addEventListener('click', () => {
+        menu_btn.classList.toggle('open');
+        nav_menu.classList.toggle('mobile');
+      });
+    </script>
   </body>
 </html>

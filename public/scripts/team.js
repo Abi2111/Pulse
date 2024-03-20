@@ -19,7 +19,7 @@ document.querySelectorAll('.wrapper').forEach(e => {
     .timeline({
       scrollTrigger: {
         trigger: e,
-        start: 'top 40%',
+        start: 'top 70%',
         end: 'bottom 0%',
       },
     })

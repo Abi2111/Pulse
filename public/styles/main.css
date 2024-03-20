@@ -470,3 +470,47 @@ html {
     gap: 20px;
   }
 }
+.swiper {
+  display: block;
+}
+.gallery_responsive,
+.description_responsive {
+  display: none;
+}
+
+@media (max-width: 48em) {
+  .swiper {
+    display: none;
+  }
+  .description {
+    display: none;
+    position: relative;
+    text-align: center;
+    max-width: 100%;
+  }
+  .gallery_responsive {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    overflow: scroll;
+    margin: 100px 0;
+  }
+  .description_responsive {
+    display: block;
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+  }
+  .gallery_item {
+    text-align: center;
+    margin: 10px 0;
+  }
+  .gallery_item img {
+    border-radius: 10px;
+    width: 90%;
+    height: 400px;
+    object-fit: cover;
+  }
+}
