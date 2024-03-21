@@ -82,6 +82,28 @@ const t3 = gsap.timeline({
 t3.from('.event3 .event_poster', { opacity: 0, y: -100, duration: 0.5 });
 t3.from('.event3 .event_info', { opacity: 0, y: 100, duration: 1 });
 
+const t4 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.event4',
+    start: 'top 70%',
+    end: 'bottom 0%',
+    toggleActions: 'play none restart none',
+  },
+});
+t4.from('.event4 .event_poster', { opacity: 0, y: -100, duration: 0.5 });
+t4.from('.event4 .event_info', { opacity: 0, y: 100, duration: 1 });
+
+const t5 = gsap.timeline({
+  scrollTrigger: {
+    trigger: '.event5',
+    start: 'top 70%',
+    end: 'bottom 0%',
+    toggleActions: 'play none restart none',
+  },
+});
+t5.from('.event5 .event_poster', { opacity: 0, y: -100, duration: 0.5 });
+t5.from('.event5 .event_info', { opacity: 0, y: 100, duration: 1 });
+
 Array.from(document.querySelectorAll('.event_poster')).forEach(e => {
   console.log(e);
   const imgs = Array.from(e.querySelectorAll('img'));
