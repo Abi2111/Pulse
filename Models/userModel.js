@@ -61,17 +61,18 @@ userSchema.pre('save', async function (next) {
 
 userSchema.statics.signin = async function (email, password) {
   const user = await this.findOne({ email });
-  console.log(user);
-  if (user) {
-    const auth = await bcrypt.compare(password, user.password);
-    if (auth) {
-      return user;
-    } else {
-      return;
-    }
-  } else {
-    return;
+
+  if (!user) {
+    return null; // User not found
   }
+
+  const isMatch = await bcrypt.compare(password, user.password);
+
+  if (!isMatch) {
+    return null; // Password does not match
+  }
+
+  return user; // Authentication successful
 };
 
 const User = mongoose.model('User', userSchema);
